@@ -26,8 +26,8 @@ app.post('/upload', function(req, res) {
         file.pipe(fstream);
         fstream.on('close', function () {
             var mailOptions = {
-                from: 'File <blasts@blastnotifications.com>',
-                to: 'dibend8@gmail.com',
+                from: config.from,
+                to: config.to,
                 subject: 'File',
                 text: 'File',
                 attachments: [
