@@ -42,10 +42,11 @@ app.post('/upload', function(req, res) {
                     console.log(err);
                 }
                 mailer.close();
+                fs.unlinkSync('./uploads/' + filename);
             });
         });
     });
-            res.send('email sent!');
+    res.send('email sent!');
 });
      
 app.get('/', function(req, res) {
